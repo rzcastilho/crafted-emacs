@@ -4,7 +4,7 @@
 
 ** Usage
 
-Clone [[https://github.com/SystemCrafters/crafted-emacs][System Crafters - Crafted Emacs Repo]] and this repository, and copy my custom modules into ~~/.config/emacs/modules~.
+Clone [[https://github.com/SystemCrafters/crafted-emacs][System Crafters - Crafted Emacs Repo]] and this repository, and copy my custom modules into =~/.config/emacs/modules=.
 
 #+begin_src shell
   git clone https://github.com/SystemCrafters/crafted-emacs ~/.config/emacs
