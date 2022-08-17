@@ -1,0 +1,13 @@
+#+title: My Crafted Emacs Configuration
+#+author: Rodrigo Zampieri Castilho
+#+date: 2022-08-17
+
+** Usage
+
+Clone [[https://github.com/SystemCrafters/crafted-emacs][System Crafters - Crafted Emacs Repo]] and this repository, and copy my custom modules into ~~/.config/emacs/modules~.
+
+#+begin_src shell
+  git clone https://github.com/SystemCrafters/crafted-emacs ~/.config/emacs
+  git clone https://github.com/rzcastilho/crafted-emacs ~/.config/crafted-emacs
+  cp ~/.config/crafted-emacs/custom-modules/*.* ~/.config/emacs/modules
+#+end_src
