@@ -18,3 +18,14 @@ Copy modules from folder =~/.config/crafted-emacs/custom-modules= into =~/.confi
 #+end_src
 
 Open the /Emacs/.
+
+* Common Problems
+
+1. Failed to verify signature archive-contents.sig
+
+To fix run the following commands.
+
+#+begin_src shell
+  mkdir -p ~/.config/emacs/elpa/gnupg
+  gpg --homedir ~/.config/emacs/elpa/gnupg --receive-keys 066DAFCB81E42C40
+#+end_src
