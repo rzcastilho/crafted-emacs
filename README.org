@@ -2,7 +2,7 @@
 #+author: Rodrigo Zampieri Castilho
 #+date: 2022-08-17
 
-* Usage
+** Usage
 
 Clone [[https://github.com/SystemCrafters/crafted-emacs][System Crafters - Crafted Emacs Repo]] and this repository.
 
@@ -19,7 +19,7 @@ Copy modules from folder =~/.config/crafted-emacs/custom-modules= into =~/.confi
 
 Open the /Emacs/.
 
-* Common Problems
+** Common Problems
 
 1. Failed to verify signature archive-contents.sig
 
