@@ -35,10 +35,10 @@
    "/Users/castilho/.config/crafted-emacs/var/network-security.data")
  '(numpydoc-insert-examples-block nil t)
  '(numpydoc-template-long nil t)
- '(org-hide-emphasis-markers t t)
- '(org-link-descriptive t t)
- '(org-mouse-1-follows-link t t)
- '(org-return-follows-link t t)
+ '(org-hide-emphasis-markers t)
+ '(org-link-descriptive t)
+ '(org-mouse-1-follows-link t)
+ '(org-return-follows-link t)
  '(package-archive-priorities
    '(("gnu" . 99)
      ("nongnu" . 80)
@@ -47,7 +47,7 @@
  '(package-selected-packages
    '(rust-mode pyvenv numpydoc blacken anaconda-mode erlang eglot zenburn-theme vertico org-appear orderless marginalia keycast helpful embark-consult elisp-demos doom-themes doom-modeline corfu-doc color-theme-sanityinc-tomorrow cherry-blossom-theme cape all-the-icons))
  '(package-user-dir "/Users/castilho/.config/crafted-emacs/elpa/")
- '(project-list-file "/Users/castilho/.config/crafted-emacs/var/projects" t)
+ '(project-list-file "/Users/castilho/.config/crafted-emacs/var/projects")
  '(python-indent-guess-indent-offset-verbose nil t)
  '(pyvenv-default-virtual-env-name "venv" t)
  '(recentf-save-file "/Users/castilho/.config/crafted-emacs/var/recentf")

@@ -30,6 +30,7 @@
 (require 'crafted-speedbar)    ; built-in file-tree
 (require 'crafted-screencast)  ; show current command and binding in modeline
 (require 'crafted-compile)     ; automatically compile some emacs lisp files
+(require 'crafted-startup)
 
 (require 'crafted-osx)
 
@@ -50,10 +51,10 @@
 (add-hook 'emacs-startup-hook
           (lambda ()
             (custom-set-faces
-             `(default ((t (:font "JetBrains Mono Light 14"))))
+             `(default ((t (:font "JetBrains Mono Light 16"))))
              `(fixed-pitch ((t (:inherit (default)))))
              `(fixed-pitch-serif ((t (:inherit (default)))))
-             `(variable-pitch ((t (:font "Arial 14")))))))
+             `(variable-pitch ((t (:font "Arial 16")))))))
 
 ;; Themes are color customization packages which coordinate the
 ;; various colors, and in some cases, font-sizes for various aspects
@@ -74,7 +75,7 @@
 
 (progn
   (disable-theme 'deeper-blue)          ; first turn off the deeper-blue theme
-  (load-theme 'zenburn t))              ; load the new theme
+  (load-theme 'cherry-blossom t))       ; load the new theme
 
 ;; Backup files
 (setq backup-directory-alist `(("." . ,(expand-file-name "tmp/backups/" user-emacs-directory))))

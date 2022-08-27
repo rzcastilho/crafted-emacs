@@ -12,11 +12,11 @@
 ;;; Code:
 
 (crafted-package-install-package 'exec-path-from-shell)
-(crafted-package-install-package 'rust-mode)
+(crafted-package-install-package 'rustic)
 
 (exec-path-from-shell-initialize)
 
-(add-hook 'rust-mode-hook 'eglot-ensure)
+(setq rustic-lsp-client 'eglot)
 
 (provide 'crafted-rust)
 ;;; crafted-rust.el ends here
