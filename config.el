@@ -51,7 +51,7 @@
 (add-hook 'emacs-startup-hook
           (lambda ()
             (custom-set-faces
-             `(default ((t (:font "Share Tech Mono 18" :weight 'regular))))
+             `(default ((t (:font "Share Tech Mono 18" :weight regular))))
              `(fixed-pitch ((t (:inherit (default)))))
              `(fixed-pitch-serif ((t (:inherit (default)))))
              `(variable-pitch ((t (:font "Arial 14")))))))
