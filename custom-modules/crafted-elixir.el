@@ -1,9 +1,9 @@
-;;;; crafted-elixir.el --- Elixir development configuration  -*- lexical-binding: t; -*-
+;;;; crafted-elixir.el --- Elixir configuration      -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022
 ;; SPDX-License-Identifier: MIT
 
-;; Author: System Crafters Community
+;; Author: Rodrigo Zampieri Castilho
 
 ;;; Commentary:
 
@@ -11,11 +11,8 @@
 
 ;;; Code:
 
-(crafted-package-install-package 'exec-path-from-shell)
 (crafted-package-install-package 'elixir-mode)
 (crafted-package-install-package 'mix)
-
-(exec-path-from-shell-initialize)
 
 (add-hook 'elixir-mode-hook 'eglot-ensure)
 (add-hook 'elixir-mode-hook 'mix-minor-mode)

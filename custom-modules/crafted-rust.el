@@ -1,9 +1,9 @@
-;;;; crafted-rust.el --- rust configuration          -*- lexical-binding: t; -*-
+;;;; crafted-rust.el --- Rust configuration          -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022
 ;; SPDX-License-Identifier: MIT
 
-;; Author: System Crafters Community
+;; Author: Rodrigo Zampieri Castilho
 
 ;;; Commentary:
 
@@ -11,10 +11,7 @@
 
 ;;; Code:
 
-(crafted-package-install-package 'exec-path-from-shell)
 (crafted-package-install-package 'rustic)
-
-(exec-path-from-shell-initialize)
 
 (setq rustic-lsp-client 'eglot)
 

@@ -31,15 +31,17 @@
 (require 'crafted-screencast)  ; show current command and binding in modeline
 (require 'crafted-compile)     ; automatically compile some emacs lisp files
 (require 'crafted-startup)
-
 (require 'crafted-osx)
-
 (require 'crafted-ide)
 (require 'crafted-erlang)
 (require 'crafted-python)
 (require 'crafted-lisp)
+
+;; My Custom Modules
+(require 'crafted-path)
 (require 'crafted-elixir)
 (require 'crafted-rust)
+(require 'crafted-terraform)
 
 ;; Set the default face. The default face is the basis for most other
 ;; faces used in Emacs. A "face" is a configuration including font,
@@ -94,5 +96,9 @@
 ;;(setq crafted-load-custom-file nil)
 
 (customize-set-variable 'crafted-startup-inhibit-splash t)
+(customize-set-variable 'crafted-ui-display-line-numbers t)
+
+(global-hl-line-mode 1)
+(setq column-number-mode t)
 
 ;;; example-config.el ends here
