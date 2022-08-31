@@ -91,7 +91,7 @@
       auto-save-file-name-transforms `((".*" ,(expand-file-name "tmp/auto-saves/" user-emacs-directory) t)))
 
 ;; To not load `custom.el' after `config.el', uncomment this line.
-;;(setq crafted-load-custom-file nil)
+(setq crafted-load-custom-file nil)
 
 (customize-set-variable 'crafted-startup-inhibit-splash t)
 
