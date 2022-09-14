@@ -42,6 +42,7 @@
 (require 'crafted-elixir)
 (require 'crafted-rust)
 (require 'crafted-terraform)
+(require 'crafted-docker)
 
 ;; Set the default face. The default face is the basis for most other
 ;; faces used in Emacs. A "face" is a configuration including font,
@@ -53,7 +54,7 @@
 (add-hook 'emacs-startup-hook
           (lambda ()
             (custom-set-faces
-             `(default ((t (:font "Share Tech Mono 18" :weight regular))))
+             `(default ((t (:font "JetBrains Mono NL 14" :weight regular))))
              `(fixed-pitch ((t (:inherit (default)))))
              `(fixed-pitch-serif ((t (:inherit (default)))))
              `(variable-pitch ((t (:font "Arial 14")))))))
@@ -98,7 +99,10 @@
 (customize-set-variable 'crafted-startup-inhibit-splash t)
 (customize-set-variable 'crafted-ui-display-line-numbers t)
 
-(global-hl-line-mode 1)
+(add-hook 'prog-mode-hook #'hl-line-mode)
+
 (setq column-number-mode t)
+
+(setq js-indent-level 2)
 
 ;;; example-config.el ends here
