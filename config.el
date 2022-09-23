@@ -41,6 +41,7 @@
 (require 'crafted-path)
 (require 'crafted-elixir)
 (require 'crafted-rust)
+(require 'crafted-typescript)
 (require 'crafted-terraform)
 (require 'crafted-docker)
 
