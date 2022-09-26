@@ -42,6 +42,7 @@
 (require 'crafted-elixir)
 (require 'crafted-rust)
 (require 'crafted-typescript)
+(require 'crafted-vue)
 (require 'crafted-terraform)
 (require 'crafted-docker)
 
@@ -79,7 +80,7 @@
 
 (progn
   (disable-theme 'deeper-blue)          ; first turn off the deeper-blue theme
-  (load-theme 'cherry-blossom t))       ; load the new theme
+  (load-theme 'doom-moonlight t))       ; load the new theme
 
 ;; Backup files
 (setq backup-directory-alist `(("." . ,(expand-file-name "tmp/backups/" user-emacs-directory))))
