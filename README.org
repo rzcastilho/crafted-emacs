@@ -11,13 +11,23 @@ Clone [[https://github.com/SystemCrafters/crafted-emacs][System Crafters - Craft
   git clone https://github.com/rzcastilho/crafted-emacs ~/.config/crafted-emacs
 #+end_src
 
-Copy modules from folder =~/.config/crafted-emacs/custom-modules= into =~/.config/emacs/modules=.
+Open the /Emacs/.
+
+** Using it with =Chemacs2=
+
+You can clone the projects in any place and properly configure in =~/.emacs-profiles.el=.
+
+Foe example:
 
 #+begin_src shell
-  cp ~/.config/crafted-emacs/custom-modules/*.* ~/.config/emacs/modules
+  git clone https://github.com/SystemCrafters/crafted-emacs ~/.crafted-emacs
+  git clone https://github.com/rzcastilho/crafted-emacs ~/.crafted-emacs-home
 #+end_src
 
-Open the /Emacs/.
+#+begin_src emacs-lisp
+(("crafted" . ((user-emacs-directory . "~/.crafted-emacs")
+                (env . (("CRAFTED_EMACS_HOME" . "~/.crafted-emacs-home"))))))
+#+end_src
 
 ** Common Problems
 
