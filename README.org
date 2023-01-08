@@ -15,9 +15,9 @@ Open the /Emacs/.
 
 ** Using it with =Chemacs2=
 
-You can clone the projects in any place and properly configure in =~/.emacs-profiles.el=.
+You can clone the projects in any place and properly configure them in =~/.emacs-profiles.el=.
 
-Foe example:
+For example:
 
 #+begin_src shell
   git clone https://github.com/SystemCrafters/crafted-emacs ~/.crafted-emacs
