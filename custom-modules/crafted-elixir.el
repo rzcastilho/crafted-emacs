@@ -13,6 +13,7 @@
 
 (crafted-package-install-package 'elixir-mode)
 (crafted-package-install-package 'mix)
+(crafted-package-install-package 'ob-elixir)
 
 (add-hook 'elixir-mode-hook 'eglot-ensure)
 (add-hook 'elixir-mode-hook 'mix-minor-mode)

@@ -1,4 +1,4 @@
-;;; example-config.el -- Example Crafted Emacs user customization file -*- lexical-binding: t; -*-
+;;; config.el -- Crafted Emacs user customization file -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
@@ -21,30 +21,73 @@
 (require 'crafted-defaults)    ; Sensible default settings for Emacs
 (require 'crafted-updates)     ; Tools to upgrade Crafted Emacs
 (require 'crafted-completion)  ; selection framework based on `vertico`
+
+;; Enable doom mode line
+(setq crafted-ui-use-doom-modeline t)
+
 (require 'crafted-ui)          ; Better UI experience (modeline etc.)
+
 (require 'crafted-windows)     ; Window management configuration
 (require 'crafted-editing)     ; Whitspace trimming, auto parens etc.
 ;(require 'crafted-evil)        ; An `evil-mode` configuration
 (require 'crafted-org)         ; org-appear, clickable hyperlinks etc.
 (require 'crafted-project)     ; built-in alternative to projectile
 (require 'crafted-speedbar)    ; built-in file-tree
-(require 'crafted-screencast)  ; show current command and binding in modeline
+;(require 'crafted-screencast)  ; show current command and binding in modeline
 (require 'crafted-compile)     ; automatically compile some emacs lisp files
 (require 'crafted-startup)
-(require 'crafted-osx)
 (require 'crafted-ide)
 (require 'crafted-erlang)
 (require 'crafted-python)
 (require 'crafted-lisp)
 
-;; My Custom Modules
+;; Require custom modules here
+(require 'crafted-desktop)
 (require 'crafted-path)
 (require 'crafted-elixir)
-(require 'crafted-rust)
+(require 'crafted-java)
 (require 'crafted-typescript)
-(require 'crafted-vue)
-(require 'crafted-terraform)
+(require 'crafted-kotlin)
+(require 'crafted-http)
 (require 'crafted-docker)
+(require 'crafted-rust)
+(require 'crafted-terraform)
+(require 'crafted-diagram)
+(require 'crafted-babel)
+
+;; Configuring Org Source Block Templates
+(require 'org-tempo)
+(add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
+(add-to-list 'org-structure-template-alist '("pl" . "src plantuml"))
+(add-to-list 'org-structure-template-alist '("ex" . "src elixir"))
+(add-to-list 'org-structure-template-alist '("mo" . "src mongo"))
+(add-to-list 'org-structure-template-alist '("ht" . "src http"))
+(add-to-list 'org-structure-template-alist '("jv" . "src java"))
+(add-to-list 'org-structure-template-alist '("js" . "src js"))
+(add-to-list 'org-structure-template-alist '("kt" . "src kotlin"))
+
+
+;; `with-eval-after-load' macro was introduced in Emacs 24.x
+;; In older Emacsen, you can do the same thing with `eval-after-load'
+;; and '(progn ..) form.
+(with-eval-after-load 'org
+  (setq org-startup-indented t) ; Enable `org-indent-mode' by default
+  (add-hook 'org-mode-hook #'visual-line-mode))
+
+;; Org Babel Languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (elixir . t)
+   (plantuml . t)
+   (java . t)
+   (kotlin . t)
+   (mongo . t)
+   (http . t)
+   (python . t)
+   (js . t)))
 
 ;; Set the default face. The default face is the basis for most other
 ;; faces used in Emacs. A "face" is a configuration including font,
@@ -56,10 +99,13 @@
 (add-hook 'emacs-startup-hook
           (lambda ()
             (custom-set-faces
-             `(default ((t (:font "JetBrains Mono NL 14" :weight regular))))
+             `(default ((t (:font "JetBrains Mono Light 14"))))
              `(fixed-pitch ((t (:inherit (default)))))
              `(fixed-pitch-serif ((t (:inherit (default)))))
              `(variable-pitch ((t (:font "Arial 14")))))))
+
+;; Override crafted emacs to complete with 3 prefix keys
+(customize-set-variable 'corfu-auto-prefix 3)
 
 ;; Themes are color customization packages which coordinate the
 ;; various colors, and in some cases, font-sizes for various aspects
@@ -67,20 +113,10 @@
 ;; modeline. Several themes are built-in to Emacs, by default,
 ;; Crafted Emacs uses the `deeper-blue' theme. Here is an example of
 ;; loading a different theme from the venerable Doom Emacs project.
-;; (crafted-package-install-package 'doom-themes)
-;; (progn
-;;   (disable-theme 'deeper-blue)          ; first turn off the deeper-blue theme
-;;   (load-theme 'doom-palenight t))       ; load the doom-palenight theme
-
-;; Install themes
 (crafted-package-install-package 'doom-themes)
-(crafted-package-install-package 'cherry-blossom-theme)
-(crafted-package-install-package 'zenburn-theme)
-(crafted-package-install-package 'color-theme-sanityinc-tomorrow)
-
 (progn
   (disable-theme 'deeper-blue)          ; first turn off the deeper-blue theme
-  (load-theme 'doom-moonlight t))       ; load the new theme
+  (load-theme 'doom-dracula t))       ; load the doom-palenight theme
 
 ;; Backup files
 (setq backup-directory-alist `(("." . ,(expand-file-name "tmp/backups/" user-emacs-directory))))
@@ -95,9 +131,6 @@
 (setq auto-save-list-file-prefix (expand-file-name "tmp/auto-saves/sessions/" user-emacs-directory)
       auto-save-file-name-transforms `((".*" ,(expand-file-name "tmp/auto-saves/" user-emacs-directory) t)))
 
-;; To not load `custom.el' after `config.el', uncomment this line.
-;;(setq crafted-load-custom-file nil)
-
 (customize-set-variable 'crafted-startup-inhibit-splash t)
 (customize-set-variable 'crafted-ui-display-line-numbers t)
 
@@ -107,4 +140,9 @@
 
 (setq js-indent-level 2)
 
-;;; example-config.el ends here
+(server-start)
+
+;; To not load `custom.el' after `config.el', uncomment this line.
+;; (setq crafted-load-custom-file nil)
+
+;;; config.el ends here
