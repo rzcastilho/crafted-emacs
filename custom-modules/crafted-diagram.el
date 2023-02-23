@@ -13,6 +13,7 @@
 
 (crafted-package-install-package 'plantuml-mode)
 (crafted-package-install-package 'flycheck-plantuml)
+(crafted-package-install-package 'mermaid-mode)
 
 (setq org-plantuml-jar-path (expand-file-name "/usr/local/bin/plantuml.jar"))
 

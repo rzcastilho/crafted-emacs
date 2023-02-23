@@ -67,6 +67,7 @@
 (add-to-list 'org-structure-template-alist '("jv" . "src java"))
 (add-to-list 'org-structure-template-alist '("js" . "src js"))
 (add-to-list 'org-structure-template-alist '("kt" . "src kotlin"))
+(add-to-list 'org-structure-template-alist '("mm" . "src mermaid"))
 
 
 ;; `with-eval-after-load' macro was introduced in Emacs 24.x
@@ -79,9 +80,11 @@
 ;; Org Babel Languages
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((emacs-lisp . t)
+ '((shell . t)
+   (emacs-lisp . t)
    (elixir . t)
    (plantuml . t)
+   (mermaid . t)
    (java . t)
    (kotlin . t)
    (mongo . t)
@@ -99,10 +102,10 @@
 (add-hook 'emacs-startup-hook
           (lambda ()
             (custom-set-faces
-             `(default ((t (:font "JetBrains Mono Light 14"))))
+             `(default ((t (:font "JetBrains Mono Light 12"))))
              `(fixed-pitch ((t (:inherit (default)))))
              `(fixed-pitch-serif ((t (:inherit (default)))))
-             `(variable-pitch ((t (:font "Arial 14")))))))
+             `(variable-pitch ((t (:font "Arial 12")))))))
 
 ;; Override crafted emacs to complete with 3 prefix keys
 (customize-set-variable 'corfu-auto-prefix 3)
