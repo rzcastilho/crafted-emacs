@@ -54,6 +54,7 @@
 (require 'crafted-terraform)
 (require 'crafted-diagram)
 (require 'crafted-babel)
+(require 'crafted-presentation)
 
 ;; Configuring Org Source Block Templates
 (require 'org-tempo)
@@ -68,7 +69,6 @@
 (add-to-list 'org-structure-template-alist '("js" . "src js"))
 (add-to-list 'org-structure-template-alist '("kt" . "src kotlin"))
 (add-to-list 'org-structure-template-alist '("mm" . "src mermaid"))
-
 
 ;; `with-eval-after-load' macro was introduced in Emacs 24.x
 ;; In older Emacsen, you can do the same thing with `eval-after-load'
