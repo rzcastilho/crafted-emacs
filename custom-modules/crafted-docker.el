@@ -14,6 +14,7 @@
 (crafted-package-install-package 'dockerfile-mode)
 (crafted-package-install-package 'docker-compose-mode)
 (crafted-package-install-package 'docker)
+(crafted-package-install-package 'earthfile-mode)
 
 (provide 'crafted-docker)
 ;;; crafted-docker.el ends here

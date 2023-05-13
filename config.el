@@ -42,7 +42,7 @@
 (require 'crafted-lisp)
 
 ;; Require custom modules here
-(require 'crafted-desktop)
+;;(require 'crafted-desktop)
 (require 'crafted-path)
 (require 'crafted-elixir)
 (require 'crafted-java)
@@ -55,6 +55,7 @@
 (require 'crafted-diagram)
 (require 'crafted-babel)
 (require 'crafted-presentation)
+(require 'crafted-template)
 
 ;; Configuring Org Source Block Templates
 (require 'org-tempo)
@@ -69,6 +70,7 @@
 (add-to-list 'org-structure-template-alist '("js" . "src js"))
 (add-to-list 'org-structure-template-alist '("kt" . "src kotlin"))
 (add-to-list 'org-structure-template-alist '("mm" . "src mermaid"))
+(add-to-list 'org-structure-template-alist '("sq" . "src sql"))
 
 ;; `with-eval-after-load' macro was introduced in Emacs 24.x
 ;; In older Emacsen, you can do the same thing with `eval-after-load'
@@ -81,6 +83,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((shell . t)
+   (sql . t)
    (emacs-lisp . t)
    (elixir . t)
    (plantuml . t)
