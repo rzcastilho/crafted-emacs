@@ -188,10 +188,5 @@
 
 (desktop-environment-mode)
 
-;; Automatically kill buffer after exit term
-(defadvice term-handle-exit
-    (after term-kill-buffer-on-exit activate)
-  (kill-buffer))
-
 (provide 'crafted-desktop)
 ;;; crafted-desktop.el ends here

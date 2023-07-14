@@ -122,7 +122,7 @@
 (crafted-package-install-package 'doom-themes)
 (progn
   (disable-theme 'deeper-blue)          ; first turn off the deeper-blue theme
-  (load-theme 'doom-dracula t))       ; load the doom-palenight theme
+  (load-theme 'doom-acario-dark t))       ; load the doom-palenight theme
 
 ;; Backup files
 (setq backup-directory-alist `(("." . ,(expand-file-name "tmp/backups/" user-emacs-directory))))
@@ -141,6 +141,11 @@
 (customize-set-variable 'crafted-ui-display-line-numbers t)
 
 (add-hook 'prog-mode-hook #'hl-line-mode)
+
+;; Automatically kill buffer after exit term
+(defadvice term-handle-exit
+    (after term-kill-buffer-on-exit activate)
+  (kill-buffer))
 
 (setq column-number-mode t)
 
