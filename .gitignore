@@ -5,3 +5,7 @@ var/
 *.*~
 *.elc
 custom.el
+history
+projects
+recentf
+transient/

@@ -1,15 +1,18 @@
-3(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (and custom-file
            (file-exists-p custom-file))
-  (load custom-file nil :nomessage))
+  (load custom-file nil 'nomessage))
+
+;; It crashes the configuration if not initialized here
+(setq package-selected-packages nil)
 
 (load "~/crafted-emacs/modules/crafted-init-config")
 
 ;; Select packages to install
-(require 'crafted-ui-packages)
 (require 'crafted-completion-packages)
 (require 'crafted-ide-packages)
 (require 'crafted-org-packages)
+(require 'crafted-ui-packages)
 
 ;; Custom
 (require 'crafted-programming-packages)
@@ -20,15 +23,23 @@
 
 ;; Load crafted-updates configuration
 (require 'crafted-defaults-config)
+(require 'crafted-osx-config)
 (require 'crafted-startup-config)
-(require 'crafted-ui-config)
-(require 'crafted-completion-config)
 (require 'crafted-ide-config)
 (require 'crafted-org-config)
+(require 'crafted-ui-config)
+(require 'crafted-completion-config)
 
 ;; Custom
 (require 'crafted-programming-config)
 (require 'crafted-my-org-config)
+
+;; Profile emacs startup
+(defun crafted-startup-example/display-startup-time ()
+  "Display the startup time after Emacs is fully initialized."
+  (message "Crafted Emacs loaded in %s."
+           (emacs-init-time)))
+(add-hook 'emacs-startup-hook #'crafted-startup-example/display-startup-time)
 
 (customize-set-variable 'crafted-ui-display-line-numbers t)
 
@@ -36,7 +47,6 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-
 
 ;; Auto save files
 ;; auto-save-mode doesn't create the path automatically!
@@ -55,3 +65,4 @@
 (set-language-environment   'utf-8)
 (set-keyboard-coding-system 'utf-8-unix)
 
+(load-theme 'tango-dark)
