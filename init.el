@@ -17,6 +17,7 @@
 ;; Custom
 (require 'crafted-programming-packages)
 (require 'crafted-my-org-packages)
+(require 'crafted-theme-packages)
 
 ;; Install packages
 (package-install-selected-packages :noconfirm)
@@ -66,7 +67,7 @@
 (set-keyboard-coding-system 'utf-8-unix)
 
 ;; Load theme
-(load-theme 'tango-dark)
+(load-theme 'dracula t)
 
 ;; Set font size
 (set-face-attribute 'default nil :height 160)
