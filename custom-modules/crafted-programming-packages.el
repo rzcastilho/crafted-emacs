@@ -22,6 +22,7 @@
 
 ;;; Elixir
 (add-to-list 'package-selected-packages 'elixir-mode)
+(add-to-list 'package-selected-packages 'elixir-ts-mode)
 (add-to-list 'package-selected-packages 'mix)
 (add-to-list 'package-selected-packages 'ob-elixir)
 

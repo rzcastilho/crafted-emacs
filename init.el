@@ -35,6 +35,13 @@
 (require 'crafted-programming-config)
 (require 'crafted-my-org-config)
 
+;; Automatically register `eglot-ensure` hooks for relevant major modes
+(crafted-ide-eglot-auto-ensure-all)
+
+;; The first time you run Emacs with this enabled, the
+;; tree sitter parser will be installed for you automatically.
+(crafted-ide-configure-tree-sitter)
+
 ;; Profile emacs startup
 (defun crafted-startup-example/display-startup-time ()
   "Display the startup time after Emacs is fully initialized."
@@ -66,8 +73,11 @@
 (set-language-environment   'utf-8)
 (set-keyboard-coding-system 'utf-8-unix)
 
+;; Show column number
+(setq column-number-mode t)
+
 ;; Load theme
-(load-theme 'dracula t)
+(load-theme 'zenburn t)
 
 ;; Set font size
 (set-face-attribute 'default nil :height 160)
