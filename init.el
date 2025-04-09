@@ -22,10 +22,7 @@ function."
 
 ;; Any extra packages in addition to the ones added by crafted-emacs
 ;; modules go here before we call `crafted-emacs-load-modules'.
-(customize-set-variable 'package-selected-packages '(
-                                                     ef-themes
-                                                     magit
-                                                     elixir-mode
+(customize-set-variable 'package-selected-packages '(elixir-mode
                                                      elixir-ts-mode
                                                      go-mode
                                                      go-ts-mode
