@@ -7,27 +7,11 @@
 Clone [[https://github.com/SystemCrafters/crafted-emacs][System Crafters - Crafted Emacs Repo]] and this repository.
 
 #+begin_src shell
-  git clone https://github.com/SystemCrafters/crafted-emacs ~/.config/emacs
-  git clone https://github.com/rzcastilho/crafted-emacs ~/.config/crafted-emacs
+  git clone https://github.com/SystemCrafters/crafted-emacs ~/crafted-emacs
+  git clone https://github.com/rzcastilho/crafted-emacs ~/.emacs.d
 #+end_src
 
 Open the /Emacs/.
-
-** Using it with =Chemacs2=
-
-You can clone the projects in any place and properly configure them in =~/.emacs-profiles.el=.
-
-For example:
-
-#+begin_src shell
-  git clone https://github.com/SystemCrafters/crafted-emacs ~/.crafted-emacs
-  git clone https://github.com/rzcastilho/crafted-emacs ~/.crafted-emacs-home
-#+end_src
-
-#+begin_src emacs-lisp
-(("crafted" . ((user-emacs-directory . "~/.crafted-emacs")
-                (env . (("CRAFTED_EMACS_HOME" . "~/.crafted-emacs-home"))))))
-#+end_src
 
 ** Common Problems
 
