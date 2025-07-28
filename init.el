@@ -106,8 +106,8 @@ function."
   :host "models.inference.ai.azure.com"
   :endpoint "/chat/completions?api-version=2024-05-01-preview"
   :stream t
-  :key (or (getenv "GITHUB_TOKEN") 
-           (error "GITHUB_TOKEN environment variable not set"))
+  ; :key (or (getenv "GITHUB_TOKEN")
+  ;          (error "GITHUB_TOKEN environment variable not set"))
   :models '(gpt-4o))
 ;;
 ;; (gptel-make-gh-copilot "Copilot")
@@ -119,8 +119,8 @@ function."
         :host "models.inference.ai.azure.com"
         :endpoint "/chat/completions?api-version=2024-05-01-preview"
         :stream t
-        :key (or (getenv "GITHUB_TOKEN") 
-                 (error "GITHUB_TOKEN environment variable not set"))
+        ; :key (or (getenv "GITHUB_TOKEN")
+        ;          (error "GITHUB_TOKEN environment variable not set"))
         :models '(gpt-4o)))
 ;;
 ;; (setq gptel-model 'claude-3.7-sonnet
