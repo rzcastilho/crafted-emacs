@@ -9,3 +9,14 @@ history
 projects
 recentf
 transient/
+.cache/
+.dap-breakpoints
+.extension/
+eln-cache/
+eshell/
+request/
+tmp/
+tramp
+tree-sitter/
+url/
+.env
